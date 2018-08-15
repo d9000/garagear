@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Editar la foto del vehículo:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <%= form_for(@veh) do |f|%>
+  										
+                                        <div class="form-group">
+                                        	<%= f.file_field :avatar, :class => "btn btn-info" %>
+                                        </div>
+                                        <%= f.submit "Subir imagen",:class => "btn btn-success"%><%= link_to "Cancelar", root_path, :class => 'btn btn-link' %>
+                                        										
+                                    <% end %>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+

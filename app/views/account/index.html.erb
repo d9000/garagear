@@ -1,0 +1,88 @@
+
+<h1 class="page-header">Tu cuenta</h1>
+<ul class="nav nav-tabs">
+	<li class="active">
+		<a href= "/account" data-toggle="tab">Información personal</a>
+	</li>
+	<li>
+		<a href= "/account/privacy" data-toggle="tab">Privacidad y permisos</a>
+	</li>
+
+</ul>
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Tu sesión:</div>
+	<div class="col-md-7"><small>
+		Iniciaste sesión a través de: <%= show_provider %>	<br />
+		Tu usuario es: <%= current_profile.email%> <br />
+		Tu IP actual es: <%= current_profile.current_sign_in_ip %> <br />
+		La última IP utilizada para iniciar sesión fue: <%= current_profile.last_sign_in_ip %>
+		
+		</small>
+		</div>
+	<div class="col-md-2"></div>
+</div>
+</p>
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Tu ícono:</div>
+	<div class="col-md-7">
+		<%= avatar_for current_profile %>		
+	</div>
+	<div class="col-md-2">
+		<%= link_to "/vehs/", :class => 'btn btn-warning btn-xs', :data => {:placement => 'right', :toggle => 'tooltip'}, :title => 'Editar marca, modelo, año o versión' do%>
+		<i class="fa fa-edit"></i> Editar
+		<%end%>
+	</div>
+</div>
+</p>
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Tu nombre en pantalla:</div>
+	<div class="col-md-7"><small>
+		<%=screen_name_for_current_profile%>
+		</small>		
+	</div>
+	<div class="col-md-2">
+		<%= link_to "/vehs/", :class => 'btn btn-warning btn-xs', :data => {:placement => 'right', :toggle => 'tooltip'}, :title => 'Editar marca, modelo, año o versión' do%>
+		<i class="fa fa-edit"></i> Editar
+		<%end%>
+	</div>
+</div>
+</p>
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Tus direcciones web:</div>
+	<div class="col-md-7"><small>
+		Perfil: /p/ <br />
+		Vehículos: /v/
+		</small>		
+	</div>
+	<div class="col-md-2"></div>
+</div>
+</p>
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Tu contraseña:</div>
+	<div class="col-md-7"><small>
+		Cambiar tu contraseña
+		</small>		
+	</div>
+	<div class="col-md-2">
+		<%= link_to "/vehs/", :class => 'btn btn-warning btn-xs', :data => {:placement => 'right', :toggle => 'tooltip'}, :title => 'Editar marca, modelo, año o versión' do%>
+		<i class="fa fa-edit"></i> Editar
+		<%end%>
+	</div>
+</div>
+</p>
+
+<p>
+<div class="row bottomline">
+	<div class="col-md-3">Eliminar mi cuenta:</div>
+	<div class="col-md-7"><small>
+		<%= link_to "Cancelar mi cuenta", registration_path(current_profile), :data => { :confirm => "Esta seguro que desea elminar su cuenta de forma permanente?" }, :method => :delete, :class => 'btn btn-danger' %>
+		</small>		
+	</div>
+	<div class="col-md-2"></div>
+</div>
+</p>

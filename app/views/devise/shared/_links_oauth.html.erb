@@ -1,0 +1,19 @@
+<%- if devise_mapping.omniauthable? %>
+
+  <%- resource_class.omniauth_providers.each do |provider| %>
+ 		<%-if provider.to_s == "facebook"%>
+ 	
+ 			<%= link_to omniauth_authorize_path(resource_name, provider), :class => "btn btn-block btn-social btn-facebook" do %>
+ 				<i class="fa fa-facebook"></i> Inicie sesión con <%=provider.to_s.titleize%>
+ 			<%end%>
+ 		
+ 		<% elsif provider.to_s == "google_oauth2"%>
+ 			<%= link_to omniauth_authorize_path(resource_name, provider), :class => "btn btn-block btn-social btn-google-plus" do %>
+ 				<i class="fa fa-google-plus"></i> Inicie sesión con <%=provider.to_s.titleize%>
+ 			<%end%>
+ 		
+ 		<%else%> 
+    		<%= link_to "Inicie sesión con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+  		<%end -%>
+	<% end -%>
+<% end -%>

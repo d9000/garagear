@@ -1,0 +1,25 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                	<li>
+                		    <div class="media">
+							    <a class="pull-left" href="#">
+							  			<%= avatar_for current_profile %>
+							    </a>
+							    <div class="media-body">
+							    	<p class="media-heading text-primary">
+							    		<%if current_profile.fname.blank?%>
+							    		<%= link_to 'Editar Perfil',edit_profile_registration_path %>
+							    		<%else%>
+							    		<%=current_profile.fname%> <br /><%=current_profile.lname%></p>
+							    		<%end%>
+							    </div>
+						    </div>
+                			
+                	</li>
+                </ul>
+                <!-- /#side-menu -->
+            </div>
+            <!-- /.sidebar-collapse -->
+        </nav>
+        <!-- /.navbar-static-side -->

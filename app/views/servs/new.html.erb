@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Registre un nuevo servicio para: <%=@veh.dominio%>
+	</div>
+	<div class="panel-body">
+		<p>
+			<%= form_for @serv do |f|%>
+				<%=hidden_field_tag :veh_id, @veh.id%>
+				<% @tiposervs.each do |ts|%>
+					<%= button_tag :value => ts.id, :name => 'ts_id', :class => 'btn btn-warning btn-lg btn-block' do%>
+						<%=ts.descripcion%> <i class="fa fa-chevron-right"></i>
+					<%end%>
+					
+				<%end%>
+				<%= link_to root_path, :class => 'btn btn-primary btn-lg btn-block' do%>
+				<i class="fa fa-chevron-left"></i> Cancelar
+				<%end%>
+			<%end%>
+		</p>
+	</div>
+	
+</div>

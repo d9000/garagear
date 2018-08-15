@@ -1,0 +1,2 @@
+module VehsHelper
+end

@@ -1,0 +1,46 @@
+<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Elija ela versión de su vehículo: 
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                	<ul class="breadcrumb" style="margin-bottom: 5px;">
+						                <li >Dominio: <%=@veh.dominio%></li>
+						                <li >
+						                	<%= link_to wizard_path(:update_marca) do%>
+						                	<%= Marca.find(@veh.marca_id).descripcion%>
+						                	<%end%>
+						                </li>
+						                <li>
+						                	<%= link_to wizard_path(:update_modelo) do%>
+						                	<%= Modelo.find(@veh.modelo_id).descripcion%>
+						                	<%end%>
+						                </li>
+						                <li><%= link_to wizard_path(:update_aniov) do%>
+						                	<%= Aniov.find(@veh.aniov_id).descripcion%>
+						                	<%end%>
+						                </li>
+						                <li class="active">Versión</li>
+              						</ul>
+                                    <%= form_for @veh, url: wizard_path, :method => :put do |f|%>
+  										
+                                        <div class="form-group">
+                                            <label>Seleccione la versión de acuerdo al año de fabricación de su vehículo:</label>
+                                            
+                                            	<%= select 'veh', 'version_id', options_from_collection_for_select(Version.where(aniov_id: @veh.aniov_id), :id, :descripcion, @veh.version_id),{:prompt => 'Selecione la versión de su vehículo'},{:class => 'form-control'} %>
+                                           	
+                                            <p class="help-block">Text de ayuda</p>
+                                        </div>
+                                        <%= f.submit "Continuar", :class => "btn btn-primary" %> <%= link_to "Cancelar", root_path, :class => 'btn btn-link' %>
+                                        										
+                                    <% end %>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->

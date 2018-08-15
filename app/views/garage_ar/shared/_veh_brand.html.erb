@@ -1,0 +1,34 @@
+
+<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		<%= link_to edit_avatar_veh_path(veh) do%>
+		<%if veh.avatar.blank? %>
+
+		<img src="http://placehold.it/140x140" class="img-responsive img-thumbnail" data-toggle="tooltip" data-placement="top" title="Click para editar imagen">
+		<%else%>
+
+		<%= image_tag veh.avatar.url(:medium), :class => "img-responsive img-thumbnail", :data => {:placement => 'top', :toggle => 'tooltip'}, :title => 'Click para editar imagen' %>
+
+		<%end%>
+		<%end%>
+	</div>
+	<div class="col-lg-9 col-md-9 col-sm-9">
+		<h3 class="text-left"><%= veh.version.aniov.modelo.marca.descripcion if !veh.version.blank? %> <%= veh.version.aniov.modelo.descripcion if !veh.version.blank? %> </h3>
+		<h4 class="text-left"><%= veh.version.descripcion if !veh.version.blank? %>
+		<%= veh.version.aniov.descripcion if !veh.version.blank? %></h4>
+		<%= link_to "/vehs/#{veh.id}/veh_steps/update_marca", :class => 'btn btn-warning btn-xs', :data => {:placement => 'right', :toggle => 'tooltip'}, :title => 'Editar marca, modelo, año o versión' do%>
+		<i class="fa fa-edit"></i> Editar
+		<%end%>
+
+	</div>
+</div>
+<div class="col-lg-12" style="padding-top: 15px;">
+	<p>
+		<%= link_to "/vehs/#{veh.id}/servs/new", :class => 'btn btn-primary btn-lg btn-block' do%>
+		Registre un servicio para su vehículo <i class="fa fa-chevron-right"></i>
+		<%end%>
+	</p>
+</div>
+
+<%= render 'garage_ar/shared/veh_servs_timeline', :veh => veh%>
+

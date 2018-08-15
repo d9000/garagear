@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Garage Ar" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sites" %>">
+    
+  </head>
+  <body>
+  	<div id="wrapper">
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+    	<%= render 'layouts/navigationleft' %>	
+    	<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <%= render 'layouts/messages' %>
+       						<%= yield %>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+       
+    </main>
+    </div>
+    <script>
+    // tooltip demo
+    $('main').tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    })
+    
+
+	</script>
+  </body>
+</html>

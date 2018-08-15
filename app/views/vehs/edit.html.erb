@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Editar los datos del vehículo:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <%= form_for(@veh) do |f|%>
+  										
+                                        <div class="form-group">
+                                            <%= f.label "Complete con el dominio(patente) de su vehículo" %>
+                                            <%= f.text_field :dominio, :autofocus => true, :class => 'form-control', :placeholder => 'AAA000' %>
+                                            
+                                            <p class="help-block">¿Por qué debo completar el dominio de mi vehículo? Porque es la mejor forma de indentificarlo, tanto para ústed como para el resto de la gente. Recuerde que no es un dato privado, ya que va expuesto por Ley en cada vehículo habilitado que se encuentra en la calle.</p>
+                                        </div>
+                                        <%= f.submit "Guardar", :class => "btn btn-success" %> <%= link_to "Cancelar", root_path, :class => 'btn btn-link' %>
+                                        										
+                                    <% end %>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->

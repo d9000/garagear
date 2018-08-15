@@ -1,0 +1,33 @@
+<% @vehs.each do |veh| %>
+<tr>
+    <td><%= veh.id %></td>
+    <td><%= veh.dominio %></td>
+    <td>
+    	<p><div class="pull-right">
+    	<%= link_to "Editar", edit_veh_path(veh), :class => 'btn btn-warning btn-xs' %> 
+    	<%= link_to "Eliminar", veh, :data => { :confirm => "Esta seguro que desea eliminar su vehiculo de forma permanente?" }, :method => :delete, :class => 'btn btn-danger btn-xs' %>
+    	
+    	
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+       </div>
+    	</p>
+   	</td>
+    
+</tr>
+<%end%>

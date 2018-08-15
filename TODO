@@ -1,0 +1,13 @@
+/v/nombre_de_usuario > todos los v del usuario
+/p/nombre_de_usuario > pagina de perfil
+/v/nombre_de_usuario/favs
+/v/nombre_de_usuario/following
+/explore > explorar los vehs
+/p/nombre_de_usuario/groups
+/account > edicion de cuenta de usuario
+/ > Frontend anonimo
+/ > Frontend loggedin
+/s/nombre_de_usuario > FE de servicios
+/:dominio > perfil publico de un vehiculo
+/:dominio/print > perfil version imprimible
+
